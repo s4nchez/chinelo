@@ -12,7 +12,7 @@ class WorkflowsRuns extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://api.github.com/repos/http4k/http4k/actions/runs")
+        fetch(`https://api.github.com/repos/${this.props.repo}/actions/runs`)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -31,7 +31,7 @@ class WorkflowsRuns extends React.Component {
     }
 
     render() {
-        const { error, isLoaded, items } = this.state;
+        const {error, isLoaded, items} = this.state;
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
@@ -52,4 +52,4 @@ class WorkflowsRuns extends React.Component {
 
 var mountNode = document.getElementById("app");
 
-ReactDOM.render(<WorkflowsRuns/>, mountNode);
+ReactDOM.render(<WorkflowsRuns repo="http4k/http4k"/>, mountNode);
