@@ -1,6 +1,6 @@
 import React from "react";
 
-export class BranchRun extends React.Component {
+export class BranchRuns extends React.Component {
 
     render() {
         return this.props.branch
