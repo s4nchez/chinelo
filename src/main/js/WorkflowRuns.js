@@ -1,6 +1,6 @@
 import React from "react";
-import {groupBy} from "./Wtf";
 import {BranchRuns} from "./BranchRuns";
+import {groupBy} from "lodash/collection";
 
 export class WorkflowRuns extends React.Component {
     constructor(props) {
