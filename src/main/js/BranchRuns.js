@@ -1,15 +1,14 @@
 import React from "react";
-import {groupBy, map} from "lodash/collection";
+import {groupBy} from "lodash/collection";
 import {CommitRuns} from "./CommitRuns";
-import {truncate} from "lodash/string";
 
 export class BranchRuns extends React.Component {
 
     render() {
         let commits = groupBy(this.props.job_runs, item => item['head_sha'])
         return (
-            <div>
-                <span>{this.props.branch}</span>
+            <div className="BranchRuns">
+                <h3>{this.props.branch}</h3>
                 <ul>
                     {Object.keys(commits).map(commit => {
                         let commit_runs = commits[commit]

@@ -7,13 +7,6 @@ function prettifyName(runElement) {
     return capitalize(replace(replace(last(split(runElement, '/')), '.yaml', ''), '_', ' '))
 }
 
-function prettifyStatus(status){
-    switch (status){
-        case 'completed': return '✅'
-        default: return status
-    }
-}
-
 export class CommitRuns extends React.Component {
 
     render() {
@@ -21,12 +14,13 @@ export class CommitRuns extends React.Component {
         let sha_created_at = moment(this.props.commit['timestamp']).fromNow()
         let message = truncate(this.props.commit['message'], {length: 80})
         let runs = this.props.runs.map(run => {
-            return {id: run['id'], name: prettifyName(run['name']), status: prettifyStatus(run['status'])}
+            return {id: run['id'], name: prettifyName(run['name']), status: run['status']}
         })
-        return <div>{sha_created_at} - {message} {sha}
+        return <div className="CommitRuns">
+            {sha_created_at} - {message}
             <ul>
                 {runs.map(run => {
-                        return <li key={run.id}>{run.name} - {run.status}</li>
+                    return <li className={`run ${run.status}`} key={run.id} title={`${run.name} - ${run.status}`} ><div className="details">{run.name} - {run.status}</div></li>
                     }
                 )}
             </ul>

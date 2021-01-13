@@ -49,11 +49,14 @@ export class WorkflowRuns extends React.Component {
             return <div>Loading...</div>;
         } else {
             return (
-                <ul>
-                    {Object.keys(items).map(branch =>
-                        <li key={branch}><BranchRuns branch={branch} job_runs={items[branch]}/></li>
-                    )}
-                </ul>
+                <div className="WorkflowRuns">
+                    <ul>
+                        {Object.keys(items).map(branch =>
+                            <li key={branch} className={branch}><BranchRuns branch={branch} job_runs={items[branch]}/>
+                            </li>
+                        )}
+                    </ul>
+                </div>
             );
         }
     }
