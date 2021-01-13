@@ -9,7 +9,8 @@ export class WorkflowRuns extends React.Component {
             error: null,
             isLoaded: false,
             items: []
-        };
+        }
+        ;
     }
 
     componentDidMount() {
@@ -49,8 +50,8 @@ export class WorkflowRuns extends React.Component {
         } else {
             return (
                 <ul>
-                    {[...items.keys()].map(branch =>
-                        <li><BranchRuns branch={branch}/></li>
+                    {Object.keys(items).map(branch =>
+                        <li key={branch}><BranchRuns branch={branch} job_runs={items[branch]}/></li>
                     )}
                 </ul>
             );

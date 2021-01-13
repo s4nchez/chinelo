@@ -9,5 +9,5 @@ export function groupBy(list, keyGetter) {
             collection.push(item);
         }
     });
-    return map;
+    return Object.fromEntries(map);
 }
