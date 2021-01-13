@@ -12,6 +12,10 @@ class WorkflowsRuns extends React.Component {
     }
 
     componentDidMount() {
+        this.loadWorkflowRuns();
+    }
+
+    loadWorkflowRuns() {
         fetch(`https://api.github.com/repos/${this.props.repo}/actions/runs`)
             .then(res => res.json())
             .then(
