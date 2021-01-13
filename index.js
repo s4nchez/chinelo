@@ -13,6 +13,11 @@ class WorkflowsRuns extends React.Component {
 
     componentDidMount() {
         this.loadWorkflowRuns();
+        this.timer = setInterval(()=> this.loadWorkflowRuns(), 10000);
+    }
+
+    componentWillUnmount() {
+        this.timer = null
     }
 
     loadWorkflowRuns() {
