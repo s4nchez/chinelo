@@ -1,4 +1,5 @@
 import React from "react";
+import {groupBy} from "./Wtf";
 
 export class WorkflowRuns extends React.Component {
     constructor(props) {
@@ -26,7 +27,7 @@ export class WorkflowRuns extends React.Component {
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        items: result['workflow_runs']
+                        items: groupBy(result['workflow_runs'], item => item['head_branch'])
                     });
                 },
                 (error) => {
@@ -47,11 +48,9 @@ export class WorkflowRuns extends React.Component {
         } else {
             return (
                 <ul>
-                    {items.map(item => (
-                        <li key={item.id}>
-                            {item.name}
-                        </li>
-                    ))}
+                    {[...items.keys()].map(branch =>
+                        <li>{branch}</li>
+                    )}
                 </ul>
             );
         }
