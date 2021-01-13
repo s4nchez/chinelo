@@ -3,3 +3,6 @@ out/
 build/
 .gradle/
 *.iml
+node_modules/
+dist/
+.cache/
