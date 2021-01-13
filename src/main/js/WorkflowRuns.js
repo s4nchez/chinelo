@@ -1,5 +1,6 @@
 import React from "react";
 import {groupBy} from "./Wtf";
+import {BranchRun} from "./BranchRun";
 
 export class WorkflowRuns extends React.Component {
     constructor(props) {
@@ -49,7 +50,7 @@ export class WorkflowRuns extends React.Component {
             return (
                 <ul>
                     {[...items.keys()].map(branch =>
-                        <li>{branch}</li>
+                        <li><BranchRun branch={branch}/></li>
                     )}
                 </ul>
             );
