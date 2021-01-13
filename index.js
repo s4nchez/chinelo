@@ -50,6 +50,6 @@ class WorkflowsRuns extends React.Component {
     }
 }
 
-var mountNode = document.getElementById("app");
+const mountNode = document.getElementById("app");
 
 ReactDOM.render(<WorkflowsRuns repo="http4k/http4k"/>, mountNode);
