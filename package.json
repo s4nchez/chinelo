@@ -12,6 +12,6 @@
     "sass": "^1.32.4"
   },
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html  --out-dir docs"
   }
 }
