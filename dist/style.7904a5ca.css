@@ -1,0 +1,56 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.CommitRuns {
+  display: flex;
+}
+.CommitRuns ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.CommitRuns .run {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+.CommitRuns .run .details {
+  display: none;
+}
+.CommitRuns .commit {
+  width: 20%;
+  margin-right: 7px;
+  font-family: "Inconsolata", monospace;
+}
+.CommitRuns .runs {
+  width: 80%;
+}
+.CommitRuns .runs li {
+  display: inline-block;
+}
+.CommitRuns .completed {
+  background-color: darkgreen;
+}
+.CommitRuns .in_progress {
+  background-color: gold;
+}
+
+.WorkflowRuns ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.BranchRuns {
+  padding-bottom: 20px;
+}
+.BranchRuns ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+/*# sourceMappingURL=/style.7904a5ca.css.map */
