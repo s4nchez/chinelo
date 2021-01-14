@@ -23,7 +23,7 @@ export class WorkflowRuns extends React.Component {
     }
 
     loadWorkflowRuns() {
-        fetch(`https://api.github.com/repos/${this.props.repo}/actions/runs`)
+        fetch(`https://api.github.com/repos/${this.props.repo}/actions/runs?per_page=100`)
             .then(res => res.json())
             .then(
                 (result) => {

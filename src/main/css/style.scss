@@ -1,9 +1,3 @@
-@mixin hide-text {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
 @mixin reset_list {
   ul {
     margin-left: 0;
@@ -18,6 +12,7 @@ body{
 
 .CommitRuns {
   @include reset_list;
+  display: flex;
 
   .run {
     height: 20px;
@@ -32,9 +27,17 @@ body{
   }
 
   .commit {
-    display: inline-block;
+    width: 20%;
     margin-right: 7px;
     font-family: 'Inconsolata', monospace;
+  }
+
+  .runs {
+    width: 80%;
+
+    li {
+      display: inline-block;
+    }
   }
 
   .completed {
@@ -45,13 +48,7 @@ body{
     background-color: gold;
   }
 
-  ul {
-    display: inline-block;
-  }
 
-  li {
-    @include hide-text;
-  }
 }
 
 .WorkflowRuns {
