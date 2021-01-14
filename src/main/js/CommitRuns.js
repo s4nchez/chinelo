@@ -17,10 +17,10 @@ export class CommitRuns extends React.Component {
             return {id: run['id'], name: prettifyName(run['name']), status: run['status']}
         })
         return <div className="CommitRuns">
-            <div className="commit">{sha}</div>
+            <div className="commit">{sha} - {message}</div>
             <ul>
                 {runs.map(run => {
-                    return <li className={`run ${run.status}`} key={run.id} title={`${run.name} - ${run.status}`} ><div className="details">{run.name} - {run.status}</div></li>
+                    return <li className={`run ${run.status}`} key={run.id} title={`${run.name} - ${run.status}`} ><div className="details">{run.name}</div></li>
                     }
                 )}
             </ul>

@@ -18,6 +18,7 @@ body{
 
 .CommitRuns {
   @include reset_list;
+
   .run {
     height: 20px;
     width: 20px;
@@ -38,6 +39,10 @@ body{
 
   .completed {
     background-color: darkgreen;
+  }
+
+  .in_progress {
+    background-color: gold;
   }
 
   ul {
