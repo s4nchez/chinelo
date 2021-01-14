@@ -15,7 +15,7 @@ export class WorkflowRuns extends React.Component {
 
     componentDidMount() {
         this.loadWorkflowRuns();
-        this.timer = setInterval(() => this.loadWorkflowRuns(), 10000);
+        this.timer = setInterval(() => this.loadWorkflowRuns(), 30000);
     }
 
     componentWillUnmount() {
