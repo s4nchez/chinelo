@@ -4,6 +4,7 @@ body {
 
 .CommitRuns {
   display: flex;
+  font-family: "Inconsolata", monospace;
 }
 .CommitRuns ul {
   margin-left: 0;
@@ -11,25 +12,31 @@ body {
   list-style: none;
 }
 .CommitRuns .run {
-  height: 20px;
-  width: 20px;
+  height: 1rem;
+  width: 1rem;
   display: inline-block;
-  margin-right: 5px;
   border-radius: 3px;
 }
 .CommitRuns .run .details {
   display: none;
 }
 .CommitRuns .commit {
+  padding: 0.2rem;
   width: 20%;
   margin-right: 7px;
-  font-family: "Inconsolata", monospace;
 }
 .CommitRuns .runs {
-  width: 80%;
+  padding: 0.2rem;
+}
+.CommitRuns .runs ul {
+  height: 1rem;
+}
+.CommitRuns .runs ul :not(:last-child) {
+  margin-right: 5px;
 }
 .CommitRuns .runs li {
   display: inline-block;
+  height: 1rem;
 }
 .CommitRuns .completed {
   background-color: darkgreen;

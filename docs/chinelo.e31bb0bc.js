@@ -47712,7 +47712,7 @@ var WorkflowRuns = /*#__PURE__*/function (_React$Component) {
       this.loadWorkflowRuns();
       this.timer = setInterval(function () {
         return _this2.loadWorkflowRuns();
-      }, 10000);
+      }, 30000);
     }
   }, {
     key: "componentWillUnmount",
@@ -47724,7 +47724,7 @@ var WorkflowRuns = /*#__PURE__*/function (_React$Component) {
     value: function loadWorkflowRuns() {
       var _this3 = this;
 
-      fetch("https://api.github.com/repos/".concat(this.props.repo, "/actions/runs?per_page=100")).then(function (res) {
+      fetch("/scratch.json").then(function (res) {
         return res.json();
       }).then(function (result) {
         _this3.setState({
@@ -47816,7 +47816,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50336" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53826" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
