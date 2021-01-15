@@ -47724,7 +47724,7 @@ var WorkflowRuns = /*#__PURE__*/function (_React$Component) {
     value: function loadWorkflowRuns() {
       var _this3 = this;
 
-      fetch("/scratch.json").then(function (res) {
+      fetch("https://api.github.com/repos/".concat(this.props.repo, "/actions/runs?per_page=100")).then(function (res) {
         return res.json();
       }).then(function (result) {
         _this3.setState({
@@ -47816,7 +47816,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53826" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62009" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
