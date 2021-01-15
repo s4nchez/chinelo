@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "parcel --out-dir docs  index.html",
-    "updatePath": "sed -i -- 's/\"\\//\".\\//g' docs/index.html"
+    "updatePath": "sed -i -- 's/\"\\//\".\\//g' docs/index.html",
+    "publish": "npm run updatePath && git add docs && git commit -am'Publish' && git push"
   }
 }
