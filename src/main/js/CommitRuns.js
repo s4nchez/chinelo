@@ -18,7 +18,7 @@ export class CommitRuns extends React.Component {
                 id: run['id'],
                 name: prettifyName(run['name']),
                 status: run['status'],
-                conclusion: run['conclusion']
+                conclusion: run['conclusion'] || run['status']
             }
         })
         return <div className="CommitRuns">

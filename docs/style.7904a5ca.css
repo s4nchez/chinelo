@@ -50,6 +50,18 @@ body {
 }
 .CommitRuns .in_progress {
   background-color: gold;
+  animation: glow 2s infinite;
+}
+@keyframes glow {
+  0% {
+    background-color: gold;
+  }
+  50% {
+    background-color: burlywood;
+  }
+  100% {
+    background-color: gold;
+  }
 }
 
 .WorkflowRuns ul {
