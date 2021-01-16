@@ -16,6 +16,7 @@ body {
   width: 1rem;
   display: inline-block;
   border-radius: 3px;
+  background-color: dimgrey;
 }
 .CommitRuns .run .details {
   display: none;
@@ -38,8 +39,14 @@ body {
   display: inline-block;
   height: 1rem;
 }
-.CommitRuns .completed {
+.CommitRuns .success {
   background-color: darkgreen;
+}
+.CommitRuns .skipped {
+  background-color: dimgrey;
+}
+.CommitRuns .failure {
+  background-color: orangered;
 }
 .CommitRuns .in_progress {
   background-color: gold;

@@ -47545,7 +47545,8 @@ var CommitRuns = /*#__PURE__*/function (_React$Component) {
         return {
           id: run['id'],
           name: prettifyName(run['name']),
-          status: run['status']
+          status: run['status'],
+          conclusion: run['conclusion']
         };
       });
       return /*#__PURE__*/_react.default.createElement("div", {
@@ -47559,7 +47560,7 @@ var CommitRuns = /*#__PURE__*/function (_React$Component) {
         className: "runs"
       }, /*#__PURE__*/_react.default.createElement("ul", null, runs.map(function (run) {
         return /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("div", {
-          className: "run ".concat(run.status),
+          className: "run ".concat(run.conclusion),
           key: run.id,
           title: "".concat(run.name, " - ").concat(run.status)
         }, /*#__PURE__*/_react.default.createElement("div", {
@@ -47816,7 +47817,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63283" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56178" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

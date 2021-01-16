@@ -14,7 +14,12 @@ export class CommitRuns extends React.Component {
         let sha_created_at = moment(this.props.commit['timestamp']).fromNow()
         let message = truncate(this.props.commit['message'], {length: 80})
         let runs = this.props.runs.map(run => {
-            return {id: run['id'], name: prettifyName(run['name']), status: run['status']}
+            return {
+                id: run['id'],
+                name: prettifyName(run['name']),
+                status: run['status'],
+                conclusion: run['conclusion']
+            }
         })
         return <div className="CommitRuns">
             <div className="commit"
@@ -23,7 +28,7 @@ export class CommitRuns extends React.Component {
                 <ul>
                     {runs.map(run => {
                             return <li>
-                                <div className={`run ${run.status}`} key={run.id}
+                                <div className={`run ${run.conclusion}`} key={run.id}
                                      title={`${run.name} - ${run.status}`}>
                                     <div className="details">{run.name}</div>
                                 </div>

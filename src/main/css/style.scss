@@ -26,6 +26,7 @@ body {
     width: 1rem;
     display: inline-block;
     border-radius: 3px;
+    background-color: dimgrey;
 
     .details {
       display: none;
@@ -55,15 +56,21 @@ body {
     }
   }
 
-  .completed {
+  .success {
     background-color: darkgreen;
+  }
+
+  .skipped {
+    background-color: dimgrey;
+  }
+
+  .failure {
+    background-color: orangered;
   }
 
   .in_progress {
     background-color: gold;
   }
-
-
 }
 
 .WorkflowRuns {
