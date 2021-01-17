@@ -17,6 +17,7 @@ export class CommitRuns extends React.Component {
             return {
                 id: run['id'],
                 name: prettifyName(run['name']),
+                html_url: run['html_url'],
                 status: run['status'],
                 conclusion: run['conclusion'] || run['status']
             }
@@ -28,10 +29,10 @@ export class CommitRuns extends React.Component {
                 <ul>
                     {runs.map(run => {
                             return <li>
-                                <div className={`run ${run.conclusion}`} key={run.id}
+                                <a href={run.html_url} target="_blank"> <div className={`run ${run.conclusion}`} key={run.id}
                                      title={`${run.name} - ${run.status}`}>
                                     <div className="details">{run.name}</div>
-                                </div>
+                                </div></a>
                             </li>
                         }
                     )}
