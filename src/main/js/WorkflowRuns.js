@@ -1,6 +1,7 @@
 import React from "react";
 import {BranchRuns} from "./BranchRuns";
 import {groupBy} from "lodash/collection";
+import {offlineExample} from "./OfflineExample";
 
 export class WorkflowRuns extends React.Component {
     constructor(props) {
@@ -22,9 +23,17 @@ export class WorkflowRuns extends React.Component {
         this.timer = null
     }
 
-    loadWorkflowRuns() {
-        fetch(`https://api.github.com/repos/${this.props.repo}/actions/runs?per_page=100`)
+    loadData() {
+        if(offlineExample){
+            console.log("USING OFFLINE EXAMPLE");
+            return Promise.resolve(offlineExample);
+        }
+        return fetch(`https://api.github.com/repos/${this.props.repo}/actions/runs?per_page=100`)
             .then(res => res.json())
+    }
+
+    loadWorkflowRuns() {
+            this.loadData()
             .then(
                 (result) => {
                     this.setState({

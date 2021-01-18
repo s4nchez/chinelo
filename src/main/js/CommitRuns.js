@@ -28,7 +28,7 @@ export class CommitRuns extends React.Component {
             <div className="runs">
                 <ul>
                     {runs.map(run => {
-                            return <li>
+                            return <li key={run.id}>
                                 <a href={run.html_url} target="_blank"> <div className={`run ${run.conclusion}`} key={run.id}
                                      title={`${run.name} - ${run.status}`}>
                                     <div className="details">{run.name}</div>
