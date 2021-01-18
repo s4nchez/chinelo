@@ -22,6 +22,20 @@ body {
   //margin-bottom: 7px;
 }
 
+.logo {
+
+  margin-top: 15px;
+
+  img{
+    height: 10em;
+  }
+
+  @include md {
+    text-align: left;
+    margin-left: 5%;
+    width: 100%;
+  }
+}
 #app {
   width: 100%;
 }

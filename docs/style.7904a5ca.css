@@ -6,6 +6,20 @@ body {
   align-items: center;
 }
 
+.logo {
+  margin-top: 15px;
+}
+.logo img {
+  height: 10em;
+}
+@media (min-width: 768px) {
+  .logo {
+    text-align: left;
+    margin-left: 5%;
+    width: 100%;
+  }
+}
+
 #app {
   width: 100%;
 }
