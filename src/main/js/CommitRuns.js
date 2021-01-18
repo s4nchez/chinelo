@@ -23,8 +23,7 @@ export class CommitRuns extends React.Component {
             }
         })
         return <div className="CommitRuns">
-            <div className="commit"
-                 title={message}>{sha} - {padEnd(truncate(split(message, "\n")[0], {length: 80}), 80, ' ')}</div>
+            <div className="commit" title={message}>{sha} - {padEnd(truncate(split(message, "\n")[0], {length: 80}), 80, ' ')}</div>
             <div className="runs">
                 <ul>
                     {runs.map(run => {
