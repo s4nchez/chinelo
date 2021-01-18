@@ -26,7 +26,6 @@ body {
 }
 
 .CommitRuns {
-  font-family: "Inconsolata", monospace;
   padding: 8px 16px;
 }
 .CommitRuns ul {
@@ -61,6 +60,14 @@ body {
   .CommitRuns .commit {
     width: 50%;
   }
+}
+.CommitRuns .commit a {
+  border-bottom: 1px dotted #c6cbd1;
+  text-decoration: none;
+  color: #444d56;
+}
+.CommitRuns .commit a :visited, .CommitRuns .commit a :active {
+  color: #444d56;
 }
 .CommitRuns .runs {
   padding: 0.2rem;

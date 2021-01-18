@@ -41,7 +41,6 @@ body {
 
 .CommitRuns {
   @include reset_list;
-  font-family: 'Inconsolata', monospace;
 
   padding: 8px 16px;
 
@@ -71,6 +70,16 @@ body {
       width: 50%;
     }
     margin-right: 7px;
+
+    a {
+      border-bottom: 1px dotted #c6cbd1;
+      text-decoration: none;
+      color: rgb(68, 77, 86);
+      :visited,:active{
+        color: rgb(68, 77, 86) ;
+      }
+    }
+
   }
 
   .runs {

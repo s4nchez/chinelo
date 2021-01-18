@@ -11,6 +11,7 @@ export class CommitRuns extends React.Component {
 
     render() {
         let sha = truncate(this.props.commit['id'], {length: 7, omission: ''})
+        let commit_url = `https://github.com/http4k/http4k/commit/${this.props.commit['id']}`
         let sha_created_at = moment(this.props.commit['timestamp']).fromNow()
         let message = truncate(this.props.commit['message'], {length: 80})
         let runs = this.props.runs.map(run => {
@@ -23,7 +24,7 @@ export class CommitRuns extends React.Component {
             }
         })
         return <div className="CommitRuns">
-            <div className="commit" title={message}>{sha} - {padEnd(truncate(split(message, "\n")[0], {length: 80}), 80, ' ')}</div>
+            <div className="commit" title={message}>{padEnd(truncate(split(message, "\n")[0], {length: 80}), 80, ' ')} <a href={commit_url}>{sha}</a></div>
             <div className="runs">
                 <ul>
                     {runs.map(run => {

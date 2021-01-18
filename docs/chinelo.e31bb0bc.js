@@ -47537,6 +47537,7 @@ var CommitRuns = /*#__PURE__*/function (_React$Component) {
         length: 7,
         omission: ''
       });
+      var commit_url = "https://github.com/http4k/http4k/commit/".concat(this.props.commit['id']);
       var sha_created_at = (0, _moment.default)(this.props.commit['timestamp']).fromNow();
       var message = (0, _string.truncate)(this.props.commit['message'], {
         length: 80
@@ -47555,9 +47556,11 @@ var CommitRuns = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "commit",
         title: message
-      }, sha, " - ", (0, _string.padEnd)((0, _string.truncate)((0, _string.split)(message, "\n")[0], {
+      }, (0, _string.padEnd)((0, _string.truncate)((0, _string.split)(message, "\n")[0], {
         length: 80
-      }), 80, ' ')), /*#__PURE__*/_react.default.createElement("div", {
+      }), 80, ' '), " ", /*#__PURE__*/_react.default.createElement("a", {
+        href: commit_url
+      }, sha)), /*#__PURE__*/_react.default.createElement("div", {
         className: "runs"
       }, /*#__PURE__*/_react.default.createElement("ul", null, runs.map(function (run) {
         return /*#__PURE__*/_react.default.createElement("li", {
