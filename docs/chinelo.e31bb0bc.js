@@ -47663,9 +47663,10 @@ exports.BranchRuns = BranchRuns;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.offlineExample = void 0;
-// export const offlineExample = null;
-var offlineExample = {
+exports.disabledOfflineExample = exports.offlineExample = void 0;
+var offlineExample = null;
+exports.offlineExample = offlineExample;
+var disabledOfflineExample = {
   "total_count": 1290,
   "workflow_runs": [{
     "id": 491755824,
@@ -64969,7 +64970,7 @@ var offlineExample = {
     }
   }]
 };
-exports.offlineExample = offlineExample;
+exports.disabledOfflineExample = disabledOfflineExample;
 },{}],"src/main/js/WorkflowRuns.js":[function(require,module,exports) {
 "use strict";
 
@@ -65151,7 +65152,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58516" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53978" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
