@@ -47556,8 +47556,8 @@ var CommitRuns = /*#__PURE__*/function (_React$Component) {
         className: "commit",
         title: message
       }, sha, " - ", (0, _string.padEnd)((0, _string.truncate)((0, _string.split)(message, "\n")[0], {
-        length: 15
-      }), 15, ' ')), /*#__PURE__*/_react.default.createElement("div", {
+        length: 80
+      }), 80, ' ')), /*#__PURE__*/_react.default.createElement("div", {
         className: "runs"
       }, /*#__PURE__*/_react.default.createElement("ul", null, runs.map(function (run) {
         return /*#__PURE__*/_react.default.createElement("li", {
@@ -47660,10 +47660,9 @@ exports.BranchRuns = BranchRuns;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.disabledOfflineExample = exports.offlineExample = void 0;
-var offlineExample = null;
-exports.offlineExample = offlineExample;
-var disabledOfflineExample = {
+exports.offlineExample = void 0;
+// export const offlineExample = null;
+var offlineExample = {
   "total_count": 1290,
   "workflow_runs": [{
     "id": 491755824,
@@ -64967,7 +64966,7 @@ var disabledOfflineExample = {
     }
   }]
 };
-exports.disabledOfflineExample = disabledOfflineExample;
+exports.offlineExample = offlineExample;
 },{}],"src/main/js/WorkflowRuns.js":[function(require,module,exports) {
 "use strict";
 
