@@ -65033,13 +65033,10 @@ var WorkflowRuns = /*#__PURE__*/function (_React$Component) {
       repo: 'http4k/http4k',
       items: []
     };
-    var path = window.location.pathname;
-    var fragments = (0, _collection.filter)((0, _string.split)(path, '/'), function (s) {
-      return (0, _string.trim)(s) !== '';
-    });
+    var repoCandidate = new URLSearchParams(window.location.search).get('repo');
 
-    if (fragments.length >= 2) {
-      _this.state.repo = fragments[fragments.length - 2] + "/" + fragments[fragments.length - 1];
+    if (repoCandidate) {
+      _this.state.repo = repoCandidate;
     }
 
     return _this;
@@ -65106,7 +65103,6 @@ var WorkflowRuns = /*#__PURE__*/function (_React$Component) {
       } else if (!isLoaded) {
         return /*#__PURE__*/_react.default.createElement("div", null, "Loading...");
       } else {
-        console.log(this.state.repo);
         return /*#__PURE__*/_react.default.createElement("div", {
           className: "WorkflowRuns"
         }, /*#__PURE__*/_react.default.createElement("h1", null, this.state.repo), /*#__PURE__*/_react.default.createElement("ul", null, Object.keys(items).map(function (branch) {
@@ -65169,7 +65165,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61132" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63826" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

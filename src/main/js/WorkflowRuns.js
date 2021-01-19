@@ -14,10 +14,9 @@ export class WorkflowRuns extends React.Component {
             repo: 'http4k/http4k',
             items: []
         };
-        let path = window.location.pathname
-        let fragments = filter(split(path, '/'), s => trim(s) !== '');
-        if (fragments.length >= 2) {
-            this.state.repo = fragments[fragments.length - 2] + "/" + fragments[fragments.length - 1]
+        let repoCandidate = new URLSearchParams(window.location.search).get('repo')
+        if (repoCandidate) {
+            this.state.repo = repoCandidate
         }
     }
 
@@ -64,7 +63,6 @@ export class WorkflowRuns extends React.Component {
         } else if (!isLoaded) {
             return <div>Loading...</div>;
         } else {
-            console.log(this.state.repo)
             return (
                 <div className="WorkflowRuns">
                     <h1>{this.state.repo}</h1>
