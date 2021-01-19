@@ -64990,6 +64990,8 @@ var _collection = require("lodash/collection");
 
 var _OfflineExample = require("./OfflineExample");
 
+var _string = require("lodash/string");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -65028,8 +65030,18 @@ var WorkflowRuns = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       error: null,
       isLoaded: false,
+      repo: 'http4k/http4k',
       items: []
     };
+    var path = window.location.pathname;
+    var fragments = (0, _collection.filter)((0, _string.split)(path, '/'), function (s) {
+      return (0, _string.trim)(s) !== '';
+    });
+
+    if (fragments.length >= 2) {
+      _this.state.repo = fragments[fragments.length - 2] + "/" + fragments[fragments.length - 1];
+    }
+
     return _this;
   }
 
@@ -65056,7 +65068,7 @@ var WorkflowRuns = /*#__PURE__*/function (_React$Component) {
         return Promise.resolve(_OfflineExample.offlineExample);
       }
 
-      return fetch("https://api.github.com/repos/".concat(this.props.repo, "/actions/runs?per_page=100")).then(function (res) {
+      return fetch("https://api.github.com/repos/".concat(this.state.repo, "/actions/runs?per_page=100")).then(function (res) {
         return res.json();
       });
     }
@@ -65094,14 +65106,15 @@ var WorkflowRuns = /*#__PURE__*/function (_React$Component) {
       } else if (!isLoaded) {
         return /*#__PURE__*/_react.default.createElement("div", null, "Loading...");
       } else {
+        console.log(this.state.repo);
         return /*#__PURE__*/_react.default.createElement("div", {
           className: "WorkflowRuns"
-        }, /*#__PURE__*/_react.default.createElement("h1", null, this.props.repo), /*#__PURE__*/_react.default.createElement("ul", null, Object.keys(items).map(function (branch) {
+        }, /*#__PURE__*/_react.default.createElement("h1", null, this.state.repo), /*#__PURE__*/_react.default.createElement("ul", null, Object.keys(items).map(function (branch) {
           return /*#__PURE__*/_react.default.createElement("li", {
             key: branch,
             className: branch
           }, /*#__PURE__*/_react.default.createElement(_BranchRuns.BranchRuns, {
-            repo: _this4.props.repo,
+            repo: _this4.state.repo,
             branch: branch,
             job_runs: items[branch]
           }));
@@ -65114,7 +65127,7 @@ var WorkflowRuns = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 exports.WorkflowRuns = WorkflowRuns;
-},{"react":"node_modules/react/index.js","./BranchRuns":"src/main/js/BranchRuns.js","lodash/collection":"node_modules/lodash/collection.js","./OfflineExample":"src/main/js/OfflineExample.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./BranchRuns":"src/main/js/BranchRuns.js","lodash/collection":"node_modules/lodash/collection.js","./OfflineExample":"src/main/js/OfflineExample.js","lodash/string":"node_modules/lodash/string.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -65127,9 +65140,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mountNode = document.getElementById("app");
 
-_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_WorkflowRuns.WorkflowRuns, {
-  repo: "http4k/http4k"
-}), mountNode);
+_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_WorkflowRuns.WorkflowRuns, null), mountNode);
 },{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./src/main/js/WorkflowRuns":"src/main/js/WorkflowRuns.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -65158,7 +65169,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59968" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61132" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
