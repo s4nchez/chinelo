@@ -62,7 +62,7 @@ export class WorkflowRuns extends React.Component {
                     <h1>{this.props.repo}</h1>
                     <ul>
                         {Object.keys(items).map(branch =>
-                            <li key={branch} className={branch}><BranchRuns branch={branch} job_runs={items[branch]}/>
+                            <li key={branch} className={branch}><BranchRuns repo={this.props.repo} branch={branch} job_runs={items[branch]}/>
                             </li>
                         )}
                     </ul>

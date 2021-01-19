@@ -13,7 +13,7 @@ export class BranchRuns extends React.Component {
                     {Object.keys(commits).map(commit => {
                         let commit_runs = commits[commit]
                         let head_commit = commit_runs[0]['head_commit']
-                        return <li key={head_commit['id']}><CommitRuns commit={head_commit} runs={commit_runs}/></li>
+                        return <li key={head_commit['id']}><CommitRuns repo={this.props.repo} commit={head_commit} runs={commit_runs}/></li>
                         }
                     )}
                 </ul>

@@ -47537,7 +47537,7 @@ var CommitRuns = /*#__PURE__*/function (_React$Component) {
         length: 7,
         omission: ''
       });
-      var commit_url = "https://github.com/http4k/http4k/commit/".concat(this.props.commit['id']);
+      var commit_url = "https://github.com/".concat(this.props.repo, "/commit/").concat(this.props.commit['id']);
       var sha_created_at = (0, _moment.default)(this.props.commit['timestamp']).fromNow();
       var message = (0, _string.truncate)(this.props.commit['message'], {
         length: 80
@@ -47635,6 +47635,8 @@ var BranchRuns = /*#__PURE__*/function (_React$Component) {
   _createClass(BranchRuns, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       var commits = (0, _collection.groupBy)(this.props.job_runs, function (item) {
         return item['head_sha'];
       });
@@ -47646,6 +47648,7 @@ var BranchRuns = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/_react.default.createElement("li", {
           key: head_commit['id']
         }, /*#__PURE__*/_react.default.createElement(_CommitRuns.CommitRuns, {
+          repo: _this.props.repo,
           commit: head_commit,
           runs: commit_runs
         }));
@@ -65079,6 +65082,8 @@ var WorkflowRuns = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       var _this$state = this.state,
           error = _this$state.error,
           isLoaded = _this$state.isLoaded,
@@ -65096,6 +65101,7 @@ var WorkflowRuns = /*#__PURE__*/function (_React$Component) {
             key: branch,
             className: branch
           }, /*#__PURE__*/_react.default.createElement(_BranchRuns.BranchRuns, {
+            repo: _this4.props.repo,
             branch: branch,
             job_runs: items[branch]
           }));
@@ -65152,7 +65158,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53978" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59968" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

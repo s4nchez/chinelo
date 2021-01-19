@@ -11,7 +11,7 @@ export class CommitRuns extends React.Component {
 
     render() {
         let sha = truncate(this.props.commit['id'], {length: 7, omission: ''})
-        let commit_url = `https://github.com/http4k/http4k/commit/${this.props.commit['id']}`
+        let commit_url = `https://github.com/${this.props.repo}/commit/${this.props.commit['id']}`
         let sha_created_at = moment(this.props.commit['timestamp']).fromNow()
         let message = truncate(this.props.commit['message'], {length: 80})
         let runs = this.props.runs.map(run => {
